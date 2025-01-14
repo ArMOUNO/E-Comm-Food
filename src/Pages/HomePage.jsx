@@ -7,7 +7,7 @@ const HomePage = () => {
     return (
         <>
             <div className="grid lg:grid-cols-8 grid-cols-2 gap-2  md:my-4 ">
-                <div className="flex items-center md:rounded-md py-20 relative lg:col-span-5 col-span-2 row-span-2 bg-cover bg-center bg-no-repeat h-[500px] md:h-auto"
+                <div className="flex items-center mt-3 md:mt-0 md:rounded-md py-20 relative lg:col-span-5 col-span-2 row-span-2 bg-cover bg-center bg-no-repeat h-[500px] md:h-auto"
                     style={{ backgroundImage: "url('/src/assets/Bannar Big.png')" }}
                 >
                     {/* <img src="/src/assets/Bannar Big.png" className="cover" alt="" /> */}
@@ -28,9 +28,9 @@ const HomePage = () => {
                 <div className="rounded-md bg-cover bg-center bg-no-repeat h-full md:h-auto lg:col-span-3" style={{ backgroundImage: "url('/src/assets/Bannar2.png')" }}>
 
                     <div className="lg:py-20 mx-4 h-full">
-                        <p className="text-[2vh]">Summer Sale</p>
-                        <p className="text-[3vh] leading-10 ">75% Off</p>
-                        <p className="text-[2vh] text-gray-600">Only Fruit & Vegetable</p>
+                        <p className="md:text-[2vh] text-sm">Summer Sale</p>
+                        <p className="md:text-[3vh] text-lg leading-10 ">75% Off</p>
+                        <p className="md:text-[2vh] text-sm text-gray-600">Only Fruit & Vegetable</p>
                         <button className=" flex space-x-2 hover:text-red-950  text-lg absolute items-center   text-green-700  ">
                             Shop Now <FaArrowRight className="mx-1" />
                         </button>
@@ -41,28 +41,28 @@ const HomePage = () => {
                 </div>
             </div>
             <div className="grid lg:grid-cols-4 grid-cols-2 gap-2  md:my-4 bg-white shadow-md px-3 py-7">
-                <div className="flex items-center space-x-2">
+                <div className="flex md:items-center items-start space-x-2">
                     <img src="/src/assets/delivery-truck 1.png" alt="" />
                     <div>
                         <p className="text-lg font-bold">Free Shipping</p>
                         <p className="text-gray-500">Free shipping on all your order</p>
                     </div>
                 </div>
-                <div className="flex items-center space-x-2">
+                <div className="flex md:items-center items-start space-x-2">
                     <img src="/src/assets/headphones 1.png" alt="" />
                     <div>
                         <p className="text-lg font-bold">Customer Support 24/7</p>
                         <p className="text-gray-500">Instant access to Support</p>
                     </div>
                 </div>
-                <div className="flex items-center space-x-2">
+                <div className="flex md:items-center items-start space-x-2">
                     <img src="/src/assets/cart.png" alt="" />
                     <div>
                         <p className="text-lg font-bold">100% Secure Payment</p>
                         <p className="text-gray-500">We ensure your money is save</p>
                     </div>
                 </div>
-                <div className="flex items-center space-x-2">
+                <div className="flex md:items-center items-start space-x-2">
                     <img src="/src/assets/cart.png" alt="" />
                     <div>
                         <p className="text-lg font-bold">Money-Back Guarantee</p>

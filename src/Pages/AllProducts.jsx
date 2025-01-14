@@ -31,6 +31,7 @@ const AllProducts = () => {
     }, []);
     return (
         <div>
+        
            <section>
                 <div className="flex justify-between">
                     <p className="text-2xl font-bold">All Menu</p>
@@ -40,7 +41,7 @@ const AllProducts = () => {
                     {
                         loading ?
                             <>
-                                <SyncLoader color="#0bd33b" />
+                                {/* <SyncLoader color="#0bd33b" /> */}
                                 Loading...
                             </> :
                             Products?.meals?.map((item, index) => (

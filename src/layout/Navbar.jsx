@@ -1,21 +1,26 @@
-import { useContext, useState } from "react";
-import { FaCartShopping } from "react-icons/fa6";
-import { CartContext } from "../Context/CartContextProvider";
+
+import { useState } from "react";
+import { CartDrawer } from "../Components/CartDrawer";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const { cartData } = useContext(CartContext);
-  console.log(cartData)
+
+  const navigate = useNavigate()
+  const handleNavigate = () => {
+    navigate('/')
+  }
+
   return (
     <nav className="bg-gray-700 text-white shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <div className="flex-shrink-0">
-            <a href="/" className="text-2xl font-bold">
-              <img src="/src/assets/Logo.png" alt="Logo" className="h-8" />
-            </a>
+          <div onClick={handleNavigate} className="flex-shrink-0">
+
+            <img src="/src/assets/Logo.png" alt="Logo" className="h-8" />
+
           </div>
 
           {/* Desktop Menu */}
@@ -71,27 +76,19 @@ const Navbar = () => {
             >
               Contact
             </a>
-
-            {/* Search Bar */}
-            <div className="relative">
-              <input
-                type="text"
-                placeholder="Search..."
-                className="px-3 py-2 rounded-md text-gray-700 placeholder-gray-bg-green-600 focus:ring-2 focus:ring-green-bg-green-600 focus:outline-none"
-              />
-            </div>
-
-            {/* Cart Icon */}
-            <button className="relative">
-              <FaCartShopping className="w-6 h-6 text-white" />
-              <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold px-1 rounded-full">
-              {cartData && cartData.length ? cartData.length : 0}
-
-              </span>
-            </button>
+          </div>
+          {/* Search Bar */}
+          <div className="relative flex items-center justify-end space-x-4">
+            <input
+              type="text"
+              placeholder="Search..."
+              className="px-3 py-2 w-[110px] md:w-auto h-7 md:h-auto rounded-md text-gray-700 placeholder-gray-bg-green-600 focus:ring-2 focus:ring-green-bg-green-600 focus:outline-none"
+            />
+             <CartDrawer />
           </div>
 
-          {/* Mobile Menu Button */}
+         
+       
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
@@ -156,20 +153,6 @@ const Navbar = () => {
             Contact
           </a>
 
-          {/* Mobile Search Bar */}
-          <input
-            type="text"
-            placeholder="Search..."
-            className="block w-full px-3 py-2 rounded-md text-gray-700 placeholder-gray-bg-green-600 focus:ring-2 focus:ring-green-bg-green-600 focus:outline-none"
-          />
-
-          {/* Mobile Cart Icon */}
-          <button className="relative block">
-            <FaCartShopping className="w-6 h-6 text-white" />
-            <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold px-1 rounded-full">
-              3
-            </span>
-          </button>
         </div>
       </div>
     </nav>

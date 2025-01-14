@@ -44,7 +44,7 @@ const Categories = () => {
         <>
             <section>
                 <p className="text-2xl font-bold">Popular Categories</p>
-                <div className="my-5 grid lg:grid-cols-9 gap-4 md:grid-cols-6 grid-cols-4 ">
+                <div className="my-5 grid lg:grid-cols-9 gap-4 md:grid-cols-6 grid-cols-3 ">
                     {
                         loading ?
                             <>

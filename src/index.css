@@ -1,5 +1,24 @@
+@import "keep-react/css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 
+    /* Custom Scrollbar Styles */
+::-webkit-scrollbar {
+    width: 9px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+    background: #f2f4f4; /* Background of the track */
+    border-radius: 50px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #01560c, #03ca32); /* Gradient from top to bottom */
+    border-radius: 50px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(to bottom, #03ca32, #015b0d); /* Reverse gradient when hovered */
+}
