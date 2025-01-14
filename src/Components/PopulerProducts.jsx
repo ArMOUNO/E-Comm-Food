@@ -1,24 +1,30 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import CategoryFrame from "./Reusable/CategoryFrame";
 import axios from "axios";
 import ShowProducts from "./Reusable/ShowProducts";
 import { FaArrowRight } from "react-icons/fa6";
-import { Navigate, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { CartContext } from "../Context/CartContextProvider";
+
+;
 
 const PopulerProducts = () => {
-   
+    const navigate = useNavigate();
     const [Products, setProducts] = useState([]);
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(false);
-    const handleCategoryShow = () => {
 
+    const handleProductShow = (data) => {
+        // console.log(data)
     }
+    const { cartData, setCartData } = useContext(CartContext)
 
-    const handleBuy = () => {
-
+    const handleBuy = (data) => {
+        setCartData((prevData)=>[...(prevData)||[],data])
     }
-    const handleViewAllProduct=()=>{
-        Navigate('/all-products');
+    // console.log(cartData)
+    const handleViewAllProduct = () => {
+        navigate('/all-products');
     }
     const fetchCategories = async () => {
         try {
@@ -49,14 +55,14 @@ const PopulerProducts = () => {
                                 {/* <SyncLoader color="#0bd33b" /> */}
                                 Loading...
                             </> :
-                            Products?.meals?.slice(0,10)?.map((item, index) => (
-                                <div onClick={() => { handleCategoryShow(item) }} key={index}>
+                            Products?.meals?.slice(0, 10)?.map((item, index) => (
+                                <div onClick={() => { handleProductShow(item) }} key={index}>
 
                                     <ShowProducts
                                         image={item?.strMealThumb}
                                         name={item.strMeal?.length > 10 ? `${item.strMeal.substring(0, 10)}...` : item.strMeal}
                                         price={item?.idMeal}
-                                        onBuy={handleBuy}
+                                        onBuy={() => { handleBuy(item) }}
                                     />
                                 </div>
                             ))

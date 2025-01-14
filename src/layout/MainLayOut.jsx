@@ -1,14 +1,23 @@
-import AllPages from "./AllPages";
+import { Outlet } from "react-router-dom";
+
 import Navbar from "./Navbar";
+import { CartContextProvider } from "../Context/CartContextProvider";
+
 
 
 const MainLayOut = () => {
-    return (
-      <>
-        <Navbar/>
-         <AllPages/>
-      </>
-    );
+  return (
+    <>
+
+      <Navbar />
+      <div className="mx-[14px]">
+        <Outlet />
+      </div>
+    </>
+
+
+
+  );
 };
 
 export default MainLayOut;
