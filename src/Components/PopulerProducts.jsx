@@ -5,6 +5,7 @@ import ShowProducts from "./Reusable/ShowProducts";
 import { FaArrowRight } from "react-icons/fa6";
 import { useNavigate } from 'react-router-dom';
 import { CartContext } from "../Context/CartContextProvider";
+import { toast } from "keep-react";
 
 ;
 
@@ -19,10 +20,30 @@ const PopulerProducts = () => {
     }
     const { cartData, setCartData } = useContext(CartContext)
 
+     
     const handleBuy = (data) => {
-        setCartData((prevData)=>[...(prevData)||[],data])
-    }
-    // console.log(cartData)
+        try {
+            setCartData((prevData) => {
+            
+                const existingItemIndex = prevData?.findIndex(item => item?.idMeal === data?.idMeal);
+                if (existingItemIndex !== -1) {
+                    const updatedData = [...prevData];
+                    updatedData[existingItemIndex].count += 1;
+                    return updatedData;
+                } else {             
+                    return [...(prevData || []), { ...data, count: 1 }];
+                }
+            });
+ 
+            toast.success(`${data?.strMeal} has been added`);
+        } catch (error) {
+            toast.error('Something bad happened');
+            console.error("Error in handleBuy:", error);
+        }
+    };
+    
+    
+  
     const handleViewAllProduct = () => {
         navigate('/all-products');
     }
@@ -48,7 +69,7 @@ const PopulerProducts = () => {
                     <p className="text-2xl font-bold">Popular Products</p>
                     <p onClick={handleViewAllProduct} className="text-green-600 flex items-center cursor-pointer ">View All <span><FaArrowRight className="text-green-600 mx-2" /></span></p>
                 </div>
-                <div className="my-5 grid lg:grid-cols-7 gap-4 md:grid-cols-5 grid-cols-3 ">
+                <div className="my-5 grid lg:grid-cols-7 gap-4  md:grid-cols-5 grid-cols-3 ">
                     {
                         loading ?
                             <>
@@ -60,7 +81,7 @@ const PopulerProducts = () => {
 
                                     <ShowProducts
                                         image={item?.strMealThumb}
-                                        name={item.strMeal?.length > 10 ? `${item.strMeal.substring(0, 10)}...` : item.strMeal}
+                                        name={item.strMeal?.length > 10 ? `${item.strMeal.substring(0, 10)}...` : item?.strMeal}
                                         price={item?.idMeal}
                                         onBuy={() => { handleBuy(item) }}
                                     />
@@ -70,6 +91,7 @@ const PopulerProducts = () => {
 
 
                 </div>
+           
             </section>
         </div>
     );
