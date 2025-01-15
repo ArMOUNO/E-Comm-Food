@@ -3,6 +3,7 @@ import App from "./App";
 import AllProducts from "./Pages/AllProducts";
 import HomePage from "./Pages/HomePage";
 import MainLayOut from "./layout/MainLayOut";
+import AboutPage from "./Pages/AboutPage";
 
 
 export const router = createBrowserRouter([
@@ -19,8 +20,8 @@ export const router = createBrowserRouter([
         element: <AllProducts />,
       },
       {
-        path: "/agent-details",
-        // element: <AgentDetails />,
+        path: "/about",
+        element: <AboutPage />,
       },
       {
         path: "/ip-report",

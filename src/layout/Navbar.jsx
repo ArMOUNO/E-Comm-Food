@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import { CartDrawer } from "../Components/CartDrawer";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,7 +13,7 @@ const Navbar = () => {
   }
 
   return (
-    <nav className="bg-gray-700 text-white shadow-md">
+    <nav className="bg-gradient-to-b from-red-900 to-red-950 text-white shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -25,18 +25,18 @@ const Navbar = () => {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-4 items-center">
-            <a
-              href="/"
+            <Link
+              to="/"
               className="hover:bg-green-600 px-3 py-2 rounded-md text-sm font-medium"
             >
               Home
-            </a>
-            <a
-              href="/about"
+            </Link>
+            <Link
+              to="/about"
               className="hover:bg-green-600 px-3 py-2 rounded-md text-sm font-medium"
             >
               About
-            </a>
+            </Link>
 
             {/* Dropdown */}
             <div className="relative">
@@ -48,34 +48,34 @@ const Navbar = () => {
               </button>
               {isDropdownOpen && (
                 <div className="absolute right-0 mt-2 w-48 bg-white text-gray-700 rounded-md shadow-lg z-20">
-                  <a
-                    href="/web-design"
+                  <Link
+                    to="/web-design"
                     className="block px-4 py-2 hover:bg-gray-200"
                   >
                     Web Design
-                  </a>
-                  <a
-                    href="/seo"
+                  </Link>
+                  <Link
+                    to="/seo"
                     className="block px-4 py-2 hover:bg-gray-200"
                   >
                     SEO
-                  </a>
-                  <a
-                    href="/marketing"
+                  </Link>
+                  <Link
+                    to="/marketing"
                     className="block px-4 py-2 hover:bg-gray-200"
                   >
                     Marketing
-                  </a>
+                  </Link>
                 </div>
               )}
             </div>
 
-            <a
-              href="/contact"
+            <Link
+              to="/contact"
               className="hover:bg-green-600 px-3 py-2 rounded-md text-sm font-medium"
             >
               Contact
-            </a>
+            </Link>
           </div>
           {/* Search Bar */}
           <div className="relative flex items-center justify-end space-x-4">
@@ -128,30 +128,30 @@ const Navbar = () => {
           }`}
       >
         <div className="px-2 pt-2 pb-3 space-y-1">
-          <a
-            href="/"
+          <Link
+            to="/"
             className="block hover:bg-green-600 px-3 py-2 rounded-md text-base font-medium"
           >
             Home
-          </a>
-          <a
-            href="/about"
+          </Link>
+          <Link
+            to="/about"
             className="block hover:bg-green-600 px-3 py-2 rounded-md text-base font-medium"
           >
             About
-          </a>
-          <a
-            href="/services"
+          </Link>
+          <Link
+            to="/services"
             className="block hover:bg-green-600 px-3 py-2 rounded-md text-base font-medium"
           >
             Services
-          </a>
-          <a
-            href="/contact"
+          </Link>
+          <Link
+            to="/contact"
             className="block hover:bg-green-600 px-3 py-2 rounded-md text-base font-medium"
           >
             Contact
-          </a>
+          </Link>
 
         </div>
       </div>
