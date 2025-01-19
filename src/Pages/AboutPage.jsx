@@ -1,6 +1,7 @@
 import { BsGooglePlay } from "react-icons/bs";
 import { HiCloudDownload } from "react-icons/hi";
 import { IoMdHeart } from "react-icons/io";
+import NewOrderDesign from "../Components/NewOrderDesign";
 
 const AboutPage = () => {
     return (
@@ -24,6 +25,9 @@ const AboutPage = () => {
                     <img src="/src/assets/AboutUs.png" alt="" />
                 </div>
             </section>
+            <div className="my-5">
+    
+            </div>
         </div>
     );
 };

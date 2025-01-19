@@ -1,6 +1,8 @@
 import CategoryFrame from "./Reusable/CategoryFrame";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import ShowProducts from "./Reusable/ShowProducts";
+import { HashLoader } from "react-spinners";
 
 const Categories = () => {
     const [categories, setCategories] = useState([]);
@@ -48,15 +50,16 @@ const Categories = () => {
                     {
                         loading ?
                             <>
-                                {/* <SyncLoader color="#0bd33b" /> */}
-                                Loading...
+                            <div className="flex justify-center w-full mx-auto col-span-8">
+                                    <HashLoader color="#c80d0d" />
+                                </div>
                             </> :
                             categories?.categories?.map((item, index) => (
                                 <div onClick={() => { handleCategoryShow(item) }} key={index}>
-                                    <CategoryFrame
+                                    <ShowProducts
                                         key={index}
-                                        img={item?.strCategoryThumb}
-                                        title={item?.strCategory}
+                                        image={item?.strCategoryThumb}
+                                        name={item?.strCategory}
 
                                     />
                                 </div>

@@ -6,6 +6,8 @@ import { FaArrowRight } from "react-icons/fa6";
 import { useNavigate } from 'react-router-dom';
 import { CartContext } from "../Context/CartContextProvider";
 import { toast } from "keep-react";
+import NewOrderDesign from "./NewOrderDesign";
+import { HashLoader } from "react-spinners";
 
 ;
 
@@ -65,23 +67,24 @@ const PopulerProducts = () => {
     return (
         <div>
             <section>
-                <div className="flex justify-between">
+                <div className="flex justify-between ">
                     <p className="text-2xl font-bold">Popular Products</p>
                     <p onClick={handleViewAllProduct} className="text-green-600 flex items-center cursor-pointer ">View All <span><FaArrowRight className="text-green-600 mx-2" /></span></p>
                 </div>
-                <div className="my-5 grid lg:grid-cols-7 gap-4  md:grid-cols-5 grid-cols-3 ">
+                <div className="my-11 grid lg:grid-cols-8 md:gap-y-20 gap-y-10 gap-4  md:grid-cols-5 grid-cols-3 ">
                     {
                         loading ?
                             <>
-                                {/* <SyncLoader color="#0bd33b" /> */}
-                                Loading...
+                            <div className="flex justify-center w-full mx-auto col-span-10">
+                                    <HashLoader color="#c80d0d" />
+                                </div>
                             </> :
                             Products?.meals?.slice(0, 10)?.map((item, index) => (
-                                <div onClick={() => { handleProductShow(item) }} key={index}>
+                                <div className="mt-3" onClick={() => { handleProductShow(item) }} key={index}>
 
-                                    <ShowProducts
-                                        image={item?.strMealThumb}
-                                        name={item.strMeal?.length > 10 ? `${item.strMeal.substring(0, 10)}...` : item?.strMeal}
+                                    <NewOrderDesign
+                                        img={item?.strMealThumb}
+                                        item={item.strMeal?.length > 10 ? `${item.strMeal.substring(0, 10)}...` : item?.strMeal}
                                         price={item?.idMeal}
                                         onBuy={() => { handleBuy(item) }}
                                     />
