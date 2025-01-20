@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import ShowProducts from "../Components/Reusable/ShowProducts";
+
 import axios from "axios";
 import { CartContext } from "../Context/CartContextProvider";
 import { useNavigate } from "react-router-dom";

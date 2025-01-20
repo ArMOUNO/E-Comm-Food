@@ -4,6 +4,7 @@ import AllProducts from "./Pages/AllProducts";
 import HomePage from "./Pages/HomePage";
 import MainLayOut from "./layout/MainLayOut";
 import AboutPage from "./Pages/AboutPage";
+import FoodByCategory from "./Pages/FoodByCategory";
 
 
 export const router = createBrowserRouter([
@@ -24,8 +25,8 @@ export const router = createBrowserRouter([
         element: <AboutPage />,
       },
       {
-        path: "/ip-report",
-        // element: <IpReport/>,
+        path: "/food-by-category/:id",
+        element: <FoodByCategory/>,
       },
     ],
   },

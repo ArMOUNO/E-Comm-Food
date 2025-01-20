@@ -1,15 +1,17 @@
 import CategoryFrame from "./Reusable/CategoryFrame";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import axios from "axios";
-import ShowProducts from "./Reusable/ShowProducts";
 import { HashLoader } from "react-spinners";
+import { useNavigate } from "react-router-dom";
+import { CartContext } from "../Context/CartContextProvider";
 
 const Categories = () => {
+    const navigate =useNavigate()
     const [categories, setCategories] = useState([]);
     const [Products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-
+    const {category, setCategory}=useContext(CartContext)
     const fetchCategories = async () => {
         try {
             const response = await axios.get("https://www.themealdb.com/api/json/v1/1/categories.php");
@@ -20,26 +22,31 @@ const Categories = () => {
             setLoading(false);
         }
     };
-    const fetchProducts = async () => {
-        try {
-            const response = await axios.get("https:www.themealdb.com/api/json/v1/1/filter.php?c=Seafood");
-            setProducts(response?.data);
-        } catch (error) {
-            setError(error?.message);
-        } finally {
-            setLoading(false);
-        }
-    };
+    const handleCatItem=(data)=>{
+        setCategory(data)
+    }
+    // const fetchProducts = async () => {
+    //     try {
+    //         const response = await axios.get("https:www.themealdb.com/api/json/v1/1/filter.php?c=Seafood");
+    //         setProducts(response?.data);
+    //     } catch (error) {
+    //         setError(error?.message);
+    //     } finally {
+    //         setLoading(false);
+    //     }
+    // };
 
 
     const handleCategoryShow = (data) => {
-        console.log(data)
+
+        navigate(`/food-by-category/${data.strCategory}`)
+      
     }
 
 
     useEffect(() => {
         fetchCategories();
-        fetchProducts();
+        // fetchProducts();
     }, []);
     // console.log(categories)
     return (
@@ -56,10 +63,11 @@ const Categories = () => {
                             </> :
                             categories?.categories?.map((item, index) => (
                                 <div onClick={() => { handleCategoryShow(item) }} key={index}>
-                                    <ShowProducts
+                                    <CategoryFrame
                                         key={index}
                                         image={item?.strCategoryThumb}
                                         name={item?.strCategory}
+                                        onBuy={()=>{handleCatItem(item)}}
 
                                     />
                                 </div>

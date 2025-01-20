@@ -1,7 +1,6 @@
 import { useContext, useEffect, useState } from "react";
-import CategoryFrame from "./Reusable/CategoryFrame";
+
 import axios from "axios";
-import ShowProducts from "./Reusable/ShowProducts";
 import { FaArrowRight } from "react-icons/fa6";
 import { useNavigate } from 'react-router-dom';
 import { CartContext } from "../Context/CartContextProvider";
@@ -9,13 +8,13 @@ import { toast } from "keep-react";
 import NewOrderDesign from "./NewOrderDesign";
 import { HashLoader } from "react-spinners";
 
-;
 
 const PopulerProducts = () => {
     const navigate = useNavigate();
     const [Products, setProducts] = useState([]);
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(false);
+
 
     const handleProductShow = (data) => {
         // console.log(data)
@@ -67,9 +66,9 @@ const PopulerProducts = () => {
     return (
         <div>
             <section>
-                <div className="flex justify-between ">
+                <div className="flex justify-between bg-gradient-to-r from-red-100 to-red-50 bg-red-50 p-2 rounded-md">
                     <p className="text-2xl font-bold">Popular Products</p>
-                    <p onClick={handleViewAllProduct} className="text-green-600 flex items-center cursor-pointer ">View All <span><FaArrowRight className="text-green-600 mx-2" /></span></p>
+                    <p onClick={handleViewAllProduct} className="button-87 p-2 px-4 rounded-md text-sm flex items-center cursor-pointer ">View All </p>
                 </div>
                 <div className="my-11 grid lg:grid-cols-8 md:gap-y-20 gap-y-10 gap-4  md:grid-cols-5 grid-cols-3 ">
                     {

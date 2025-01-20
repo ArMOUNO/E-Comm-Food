@@ -2,6 +2,7 @@
 import { FaArrowRight } from "react-icons/fa6";
 import Categories from "../Components/Categories";
 import PopulerProducts from "../Components/PopulerProducts";
+import TodayOffer from "../Components/TodayOffer";
 
 const HomePage = () => {
     return (
@@ -72,6 +73,7 @@ const HomePage = () => {
             </div>
             <Categories/>
             <PopulerProducts/>
+            <TodayOffer/>
         </>
     );
 };

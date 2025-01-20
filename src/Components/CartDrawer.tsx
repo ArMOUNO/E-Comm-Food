@@ -11,13 +11,13 @@ export const CartDrawer = () => {
     const { cartData, setCartData } = useContext(CartContext);
 
     const showCartData = () => {
-        console.log(cartData)
+       
     }
     const handleDoOrder = () => {
-        console.log("do")
+       
     }
     const handleIncrement = (data) => {
-        console.log(data)
+       
         try {
             setCartData((prevData) => {
                 return prevData?.map((item) => {
@@ -28,16 +28,16 @@ export const CartDrawer = () => {
                 });
             });
         } catch (err) {
-            console.log(err);
+          
         }
     };
 
     // const totalOrder = cartData?.reduce((item) => item + cartData.count)
     const totalOrder = cartData?.reduce((sum, cartItem) => sum + cartItem.count, 0);
     const totalPrice = cartData?.reduce((sum, cartitem) => Number(sum) + Number(cartitem.idMeal), 0);
-    console.log(totalPrice);
+  
 
-    console.log(totalOrder)
+  
     const handledecrement = (data) => {
         try {
             setCartData((prevData) => {

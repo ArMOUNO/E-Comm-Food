@@ -16,14 +16,16 @@ const Navbar = () => {
     <nav className="bg-gradient-to-b from-red-900 to-red-950 text-white shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          {/* Logo */}
-          <div onClick={handleNavigate} className="flex-shrink-0">
 
-            <img src="/src/assets/Logo.png" alt="Logo" className="h-8" />
+          <div onClick={handleNavigate} className="flex-shrink-0">
+            <Link to="/">
+              <img src="/src/assets/Logo.png" alt="Logo" className="h-8" />
+            </Link>
+
 
           </div>
 
-          {/* Desktop Menu */}
+
           <div className="hidden md:flex space-x-4 items-center">
             <Link
               to="/"
@@ -38,7 +40,7 @@ const Navbar = () => {
               About
             </Link>
 
-            {/* Dropdown */}
+
             <div className="relative">
               <button
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
@@ -77,18 +79,18 @@ const Navbar = () => {
               Contact
             </Link>
           </div>
-          {/* Search Bar */}
+
           <div className="relative flex items-center justify-end space-x-4">
             <input
               type="text"
               placeholder="Search..."
               className="px-3 py-2 w-[110px] md:w-auto h-7 md:h-auto rounded-md text-gray-700 placeholder-gray-bg-green-600 focus:ring-2 focus:ring-green-bg-green-600 focus:outline-none"
             />
-             <CartDrawer />
+            <CartDrawer />
           </div>
 
-         
-       
+
+
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
@@ -122,7 +124,6 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
       <div
         className={`md:hidden transition-all duration-300 ease-in-out overflow-hidden ${isOpen ? "max-h-screen" : "max-h-0"
           }`}
