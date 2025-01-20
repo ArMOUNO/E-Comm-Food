@@ -5,6 +5,7 @@ import HomePage from "./Pages/HomePage";
 import MainLayOut from "./layout/MainLayOut";
 import AboutPage from "./Pages/AboutPage";
 import FoodByCategory from "./Pages/FoodByCategory";
+import { Login } from "./Components/Login";
 
 
 export const router = createBrowserRouter([
@@ -12,6 +13,10 @@ export const router = createBrowserRouter([
     path: "/",
     element: <MainLayOut />,
     children: [
+      {
+        path: "/login",
+        element: <Login/>,
+      },
       {
         path: "/",
         element: <HomePage />,

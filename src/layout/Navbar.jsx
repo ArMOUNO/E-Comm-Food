@@ -2,6 +2,8 @@
 import { useState } from "react";
 import { CartDrawer } from "../Components/CartDrawer";
 import { Link, useNavigate } from "react-router-dom";
+import { Login } from "../Components/Login";
+// import Login from "../Components/Login";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,6 +13,12 @@ const Navbar = () => {
   const handleNavigate = () => {
     navigate('/')
   }
+const getItem=JSON.parse(localStorage.getItem("user"));
+const HandlelogOut = () => {
+  localStorage.removeItem("user"); 
+  console.log("User has been logged out.");
+
+};
 
   return (
     <nav className="bg-gradient-to-b from-red-900 to-red-950 text-white shadow-md">
@@ -87,6 +95,20 @@ const Navbar = () => {
               className="px-3 py-2 w-[110px] md:w-auto h-7 md:h-auto rounded-md text-gray-700 placeholder-gray-bg-green-600 focus:ring-2 focus:ring-green-bg-green-600 focus:outline-none"
             />
             <CartDrawer />
+            {
+              getItem?
+              <Link >
+              <div onClick={HandlelogOut} className="logout-btn p-3 text-white bg-red-600 rounded-md cursor-pointer hover:bg-red-700 transition-all">
+              Log out
+              </div>
+            </Link>:
+            <Link to="/login">
+              <div  className="button-29 p-3 text-white bg-red-600 rounded-md cursor-pointer hover:bg-red-700 transition-all">
+                Login
+              </div>
+            </Link>
+            }
+          
           </div>
 
 

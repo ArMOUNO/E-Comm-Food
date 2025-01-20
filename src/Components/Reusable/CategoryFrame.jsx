@@ -12,7 +12,7 @@ const CategoryFrame = ({ image, name, price, onBuy }) => {
         onClick={onBuy}
         className="py-1  px-3 bg-gradient-to-r from-red-500 to-yellow-400 text-white rounded-full  text-sm font-medium transition-transform transform hover:scale-105 hover:translate-x-1"
       >
-       Details
+       View Items
       </button>
     </div>
   );
