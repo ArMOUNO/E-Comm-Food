@@ -7,6 +7,7 @@ import AboutPage from "./Pages/AboutPage";
 import FoodByCategory from "./Pages/FoodByCategory";
 import { Login } from "./Components/Login";
 import OrderProcess from "./Pages/OrderProcess";
+import OrderProcess2 from "./Pages/OrderProcess2";
 
 
 export const router = createBrowserRouter([
@@ -37,6 +38,10 @@ export const router = createBrowserRouter([
       {
         path: "/order-process",
         element: <OrderProcess/>,
+      },
+      {
+        path: "/order-process/second-step",
+        element: <OrderProcess2/>,
       },
     ],
   },
