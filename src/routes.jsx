@@ -6,6 +6,7 @@ import MainLayOut from "./layout/MainLayOut";
 import AboutPage from "./Pages/AboutPage";
 import FoodByCategory from "./Pages/FoodByCategory";
 import { Login } from "./Components/Login";
+import OrderProcess from "./Pages/OrderProcess";
 
 
 export const router = createBrowserRouter([
@@ -32,6 +33,10 @@ export const router = createBrowserRouter([
       {
         path: "/food-by-category/:id",
         element: <FoodByCategory/>,
+      },
+      {
+        path: "/order-process",
+        element: <OrderProcess/>,
       },
     ],
   },

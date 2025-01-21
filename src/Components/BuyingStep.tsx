@@ -2,29 +2,35 @@
 import { Check } from 'phosphor-react'
 import { Steps, StepsContent, StepsDescription, StepsItem, StepsPoint, StepsTitle } from 'keep-react'
 
-export const BuyingStep = () => {
+export const BuyingStep = ({paymentVals,emailVals,AddressVals}) => {
+  const paymentVal=paymentVals;
+  const emailVal=emailVals;
+  const AddressVal=AddressVals;
+  
   const data = [
     {
       id: 1,
-      title: 'Personal Information',
-      description: 'Enter your personal details to create an account.',
-      isComplete: true,
+      title: 'Order Address',
+      description: 'Enter your order address to proceed with the order.',
+      isComplete: AddressVal,
     },
     {
       id: 2,
       title: 'Verify Email',
       description: 'Check email for a verification link to confirm your account.',
-      isComplete: false,
+      isComplete: emailVal,
     },
     {
       id: 3,
-      title: 'Setup Profile',
-      description: 'Complete your profile by adding a profile picture and bio.',
-      isComplete: false,
-    },
+      title: 'Payment',
+      description: 'Complete your payment  to complete your order.',
+      isComplete: paymentVal
+    }
+    
   ]
   return (
-    <Steps>
+  <div className='my-7'>
+      <Steps>
       {data.map((step) => (
         <StepsItem key={step.id}>
           <StepsPoint
@@ -39,5 +45,6 @@ export const BuyingStep = () => {
         </StepsItem>
       ))}
     </Steps>
+  </div>
   )
 }

@@ -6,7 +6,7 @@ import { HiMinusSm } from "react-icons/hi";
 import { HiPlusSm } from "react-icons/hi";
 const ShowCartData = ({ price, title, img, handleRemoveOrder, handleDoOrder, handleIncrement, handledecrement,quantity }) => {
     const { cartData } = useContext(CartContext);
-    console.log("ok", cartData);
+
 
     return (
         <div className="bg-white shadow-md rounded-lg border border-gray-300 p-2 my-1">
