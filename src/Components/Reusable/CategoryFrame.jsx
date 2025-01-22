@@ -4,7 +4,7 @@ const CategoryFrame = ({ image, name, price, onBuy }) => {
       <img
         src={image}
         alt={name}
-        className="w-[90%] md:h-[150px] mx-12 h[120px] object-cover rounded-md mb-3 hover:scale-105 transition-transform duration-200"
+        className="w-[90%] md:h-[120px] mx-12 h[120px] object-cover rounded-md mb-3 hover:scale-105 transition-transform duration-200"
       />
       <h3 className="md:text-lg text-sm font-semibold text-gray-800  text-center">{name?.length > 20 ? `${name.slice(0, 20)}...` : name}</h3>
       {/* <p className="text-sm font-semibold text-green-600 mb-2">Price: ${price}</p> */}

@@ -37,13 +37,13 @@ const HandlelogOut = () => {
           <div className="hidden md:flex space-x-4 items-center">
             <Link
               to="/"
-              className="hover:bg-green-600 px-3 py-2 rounded-md text-sm font-medium"
+              className=" px-3 py-1 rounded-full  hover:bg-gradient-to-b hover:from-gray-800 hover:to-red-800 hover:shadow-lg transition-all duration-300 ease-in-out flex items-center justify-center"
             >
               Home
             </Link>
             <Link
               to="/about"
-              className="hover:bg-green-600 px-3 py-2 rounded-md text-sm font-medium"
+              className=" px-3 py-1 rounded-full  hover:bg-gradient-to-b hover:from-gray-800 hover:to-red-800 hover:shadow-lg transition-all duration-300 ease-in-out flex items-center justify-center"
             >
               About
             </Link>
@@ -52,7 +52,7 @@ const HandlelogOut = () => {
             <div className="relative">
               <button
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                className="hover:bg-green-600 px-3 py-2 rounded-md text-sm font-medium focus:outline-none"
+                className=" px-3 py-1 rounded-full  hover:bg-gradient-to-b hover:from-gray-800 hover:to-red-800 hover:shadow-lg transition-all duration-300 ease-in-out flex items-center justify-center focus:outline-none"
               >
                 Services
               </button>
@@ -82,7 +82,7 @@ const HandlelogOut = () => {
 
             <Link
               to="/contact"
-              className="hover:bg-green-600 px-3 py-2 rounded-md text-sm font-medium"
+              className=" px-3 py-1 rounded-full  hover:bg-gradient-to-b hover:from-gray-800 hover:to-red-800 hover:shadow-lg transition-all duration-300 ease-in-out flex items-center justify-center"
             >
               Contact
             </Link>
@@ -110,8 +110,6 @@ const HandlelogOut = () => {
             }
           
           </div>
-
-
 
           <div className="md:hidden">
             <button

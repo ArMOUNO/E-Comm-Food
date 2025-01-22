@@ -17,7 +17,7 @@ export const BuyingStep = ({paymentVals,emailVals,AddressVals}) => {
     {
       id: 2,
       title: 'Verify Email',
-      description: 'Check email for a verification link to confirm your account.',
+      description: 'Enter the One-Time Password (OTP) sent to your email to verify your account.',
       isComplete: emailVal,
     },
     {

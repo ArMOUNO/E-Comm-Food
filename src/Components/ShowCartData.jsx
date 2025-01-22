@@ -12,7 +12,7 @@ const ShowCartData = ({ price, title, img, handleRemoveOrder, handleDoOrder, han
         <div className="bg-white shadow-md rounded-lg border border-gray-300 p-2 my-1">
             <div className="flex items-start space-x-5">
                 <img
-                    className="w-20 h-20 p-1 object-cover rounded-md "
+                    className="w-20 h-20 rounded-md overflow-hidden p-1 object-cover  "
                     src={img}
                     alt="Product"
                 />
@@ -44,12 +44,12 @@ const ShowCartData = ({ price, title, img, handleRemoveOrder, handleDoOrder, han
                         <BsCartDashFill className="text-xl mr-2" />
                         Remove
                     </button>
-                    <button
+                    {/* <button
                         onClick={handleDoOrder}
                         className="flex items-center text-green-700 bg-green-100 hover:bg-green-200 rounded-full px-4 py-2 text-sm font-medium transition shadow">
                         <IoMdCheckmarkCircleOutline className="text-xl mr-2" />
                         Buy Now
-                    </button>
+                    </button> */}
                 </div>
             </div>
         </div>

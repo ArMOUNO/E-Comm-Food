@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
 import { BuyingStep } from '../Components/BuyingStep';
-
-import { InputOTP, InputOTPGroup, InputOTPItem } from 'keep-react'
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
-const OrderProcess2 = () => {
+const OrderProcess3 = () => {
     const navigate = useNavigate()
     const [otp,setOtp]=useState()
 
@@ -34,25 +32,11 @@ const OrderProcess2 = () => {
                     </div>
                     <BuyingStep
                         AddressVals={true}
-                        emailVals={false}
+                        emailVals={true}
                         paymentVals={false}
                     />
                 </div>
-                <InputOTP
-                    maxLength={6}
-                    onChange={(value) => {
-                        setOtp(value);
-                    }}
-                >
-                    <InputOTPGroup>
-                        <InputOTPItem index={0} />
-                        <InputOTPItem index={1} />
-                        <InputOTPItem index={2} />
-                        <InputOTPItem index={3} />
-                        <InputOTPItem index={4} />
-                        <InputOTPItem index={5} />
-                    </InputOTPGroup>
-                </InputOTP>
+              vaaaaa
 
                 <button onClick={handleNext} className='button-52 my-4 w-fit px-5 text-white'>Next</button>
             </div>
@@ -61,4 +45,4 @@ const OrderProcess2 = () => {
     );
 };
 
-export default OrderProcess2;
+export default OrderProcess3;

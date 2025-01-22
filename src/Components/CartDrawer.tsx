@@ -18,7 +18,7 @@ export const CartDrawer = () => {
         setIsOpen(false);
     };
     const getId = JSON.parse(localStorage.getItem('user'))
-    console.log(getId.email)
+
 
     const showCartData = () => {
 
@@ -102,8 +102,8 @@ export const CartDrawer = () => {
         const targetPath = getId?.email ? "/order-process" : "/login";
         navigate(targetPath);
     }
-    
-    
+
+
     const handleSelectProduct = (data, isChecked) => {
         setSelectProduct((prevProducts) => {
             if (isChecked === "false") {
@@ -190,16 +190,19 @@ export const CartDrawer = () => {
                                 </p>
                             </div>
 
+                            {
+                                totalOrder ?
+                                    <div className='flex justify-center mt-4'>
+                                        <button
+                                            onClick={handleBuyAll}
+                                            className="flex items-center text-black bg-yellow-500 hover:bg-red-200 rounded-full px-6 py-2 text-sm font-medium transition shadow"
+                                        >
+                                            <IoMdDoneAll className="text-xl mr-2" />
+                                            Procced to checkout
+                                        </button>
+                                    </div> : ""
+                            }
 
-                            <div className='flex justify-center mt-4'>
-                                <button
-                                    onClick={handleBuyAll}
-                                    className="flex items-center text-black bg-yellow-500 hover:bg-green-200 rounded-full px-6 py-2 text-sm font-medium transition shadow"
-                                >
-                                    <IoMdDoneAll className="text-xl mr-2" />
-                                    Procced to checkout
-                                </button>
-                            </div>
 
                         </div>
                     ) : null}

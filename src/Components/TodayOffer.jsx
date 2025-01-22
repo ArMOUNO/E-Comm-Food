@@ -3,7 +3,7 @@ import OfferItems from "./Reusable/OfferItems";
 import { toast } from "keep-react";
 import { CartContext } from "../Context/CartContextProvider";
 import axios from "axios";
-
+import { PiFlagPennantFill } from "react-icons/pi";
 const TodayOffer = () => {
     const [Products, setProducts] = useState([]);
     const [error, setError] = useState(null);
@@ -50,16 +50,37 @@ const TodayOffer = () => {
         }
     };
     const HandleAddCart = (data) => {
-        console.log(data)
-    }
+        try {
+            setCartData((prevData) => {
+            
+                const existingItemIndex = prevData?.findIndex(item => item?.idMeal === data?.idMeal);
+                if (existingItemIndex !== -1) {
+                    const updatedData = [...prevData];
+                    updatedData[existingItemIndex].count += 1;
+                    return updatedData;
+                } else {             
+                    return [...(prevData || []), { ...data, count: 1 }];
+                }
+            });
  
+            toast.success(`${data?.strMeal} has been added`);
+        } catch (error) {
+            toast.error('Something bad happened');
+            console.error("Error in handleBuy:", error);
+        }
+    }
+
     useEffect(() => {
         fetchOfferFood();
 
     }, []);
     return (
-        <div>
-            <p className="text-gray-600 font-bold text-center mb-6 text-3xl md:text-5xl font-mono ">Today <span className="text-red-500">Special</span> Offer</p>
+        <div className="relative bg-gradient-to-r from-white to-red-100 p-2 rounded-md">
+            <div className="relative w-fit mx-auto">
+                <p className="text-gray-600 font-bold text-center mt-4 mb-6 text-3xl md:text-5xl font-mono ">Today <span className="text-red-500">Special</span> Offer</p>
+                <PiFlagPennantFill className="absolute text-red-600 top-[-80px] left-[-6rem]" size={140} />
+            </div>
+            <img className="absolute md:w-[60%] md:top-[-100px] md:right-[-180px] lg:block hidden  lg:top-[-140px] lg:right-0 opacity-100 lg:w-[50%]" src="/src/assets/offerSec.png" alt="" />
             <div className="grid lg:grid-cols-6 md:grid-cols-5 grid-cols-3 gap-3 ">
                 {
                     Products?.meals?.map((item) => (
