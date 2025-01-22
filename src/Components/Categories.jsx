@@ -24,6 +24,7 @@ const Categories = () => {
     };
     const handleCatItem=(data)=>{
         setCategory(data)
+        navigate(`/food-by-category/${data.strCategory}`)
     }
     // const fetchProducts = async () => {
     //     try {
@@ -39,7 +40,7 @@ const Categories = () => {
 
     const handleCategoryShow = (data) => {
 
-        navigate(`/food-by-category/${data.strCategory}`)
+        // navigate(`/food-by-category/${data.strCategory}`)
       
     }
 

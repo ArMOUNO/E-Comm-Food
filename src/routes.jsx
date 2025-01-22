@@ -10,6 +10,7 @@ import OrderProcess from "./Pages/OrderProcess";
 import OrderProcess2 from "./Pages/OrderProcess2";
 import OrderProcess3 from "./Pages/OrderProcess3";
 import BlankRout from "./Components/BlankRout";
+import Contact from "./Pages/Contact";
 
 
 export const router = createBrowserRouter([
@@ -52,6 +53,10 @@ export const router = createBrowserRouter([
       {
         path: "/order-process/final-step",
         element: <OrderProcess3/>,
+      },
+      {
+        path: "/contact",
+        element: <Contact/>,
       },
   
     ],
