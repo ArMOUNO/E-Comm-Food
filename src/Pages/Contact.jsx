@@ -41,7 +41,7 @@ const Contact = () => {
                                 />
                                 <label
                                     htmlFor="name"
-                                    className="absolute text-sm text-gray-500 rounded-[5px] left-4 top-0 transform -translate-y-1/2 bg-red-100 px-1 transition-all duration-200 ease-in-out peer-placeholder-shown:top-1/2 peer-placeholder-shown:translate-y-1/2 peer-placeholder-shown:text-gray-400 peer-placeholder-shown:text-base peer-focus:top-0 peer-focus:-translate-y-1/2 peer-focus:text-red-500 peer-focus:text-sm"
+                                    className="absolute text-sm text-gray-700 rounded-[5px] left-4 top-0 transform -translate-y-1/2 bg-red-100 px-1 transition-all duration-200 ease-in-out peer-placeholder-shown:top-1/2 peer-placeholder-shown:translate-y-1/2 peer-placeholder-shown:text-gray-400 peer-placeholder-shown:text-base peer-focus:top-0 peer-focus:-translate-y-1/2 peer-focus:text-red-500 peer-focus:text-sm"
                                 >
                                     Name
                                 </label>
@@ -59,7 +59,7 @@ const Contact = () => {
                                 />
                                 <label
                                     htmlFor="email"
-                                    className="absolute text-sm text-gray-500 rounded-[5px] left-4 top-0 transform -translate-y-1/2 bg-red-100 px-1 transition-all duration-200 ease-in-out peer-placeholder-shown:top-1/2 peer-placeholder-shown:translate-y-1/2 peer-placeholder-shown:text-gray-400 peer-placeholder-shown:text-base peer-focus:top-0 peer-focus:-translate-y-1/2 peer-focus:text-red-500 peer-focus:text-sm"
+                                    className="absolute text-sm text-gray-700 rounded-[5px] left-4 top-0 transform -translate-y-1/2 bg-red-100 px-1 transition-all duration-200 ease-in-out peer-placeholder-shown:top-1/2 peer-placeholder-shown:translate-y-1/2 peer-placeholder-shown:text-gray-400 peer-placeholder-shown:text-base peer-focus:top-0 peer-focus:-translate-y-1/2 peer-focus:text-red-500 peer-focus:text-sm"
                                 >
                                     Email
                                 </label>
