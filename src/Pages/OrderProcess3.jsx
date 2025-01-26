@@ -4,17 +4,17 @@ import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 const OrderProcess3 = () => {
     const navigate = useNavigate()
-    const [otp,setOtp]=useState()
+    const [otp, setOtp] = useState()
 
 
     const handleNext = () => {
-        if (otp?.length===6) {
+        if (otp?.length === 6) {
             navigate('/order-process/final-step');
         } else {
 
             Swal.fire({
                 title: "Error",
-                text: "Please Insert the correct OTP.",
+                // text: "Please Insert the correct OTP.",
                 icon: "warning",
                 button: "OK",
             });
@@ -36,7 +36,7 @@ const OrderProcess3 = () => {
                         paymentVals={false}
                     />
                 </div>
-              vaaaaa
+                vaaaaa
 
                 <button onClick={handleNext} className='button-52 my-4 w-fit px-5 text-white'>Next</button>
             </div>

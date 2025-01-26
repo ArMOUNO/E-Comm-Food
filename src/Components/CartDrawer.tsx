@@ -88,8 +88,7 @@ export const CartDrawer = () => {
     // const totalOrder = cartData?.reduce((item) => item + cartData.count)
     const totalOrder = selectProduct?.reduce((sum, selectItm) => sum + selectItm.count, 0);
     const totalPrice = selectProduct?.reduce((sum, selectItm) => Number(sum) + Number(selectItm.idMeal * selectItm.count), 0);
-    console.log(totalOrder)
-    console.log(totalPrice)
+  
     const handleRemoveOrder = (data) => {
 
         const newItem = cartData?.filter((item) => item?.idMeal !== data?.idMeal);
@@ -117,7 +116,7 @@ export const CartDrawer = () => {
     };
 
 
-    console.log(selectProduct)
+
     useEffect(() => {
         // console.log('Updated selectProduct:', selectProduct);
     }, [selectProduct, totalOrder, totalPrice]);

@@ -342,3 +342,7 @@
     padding: 13px 50px 13px;
   }
 }
+
+.offer-cart:hover {
+  content: url('/src/assets/OfferCart.png');
+}
