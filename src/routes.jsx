@@ -12,6 +12,7 @@ import OrderProcess3 from "./Pages/OrderProcess3";
 import BlankRout from "./Components/BlankRout";
 import Contact from "./Pages/Contact";
 import ProtectedRoute from "./Context/ProtectedRoute";
+import DetailsProduct from "./Pages/DetailsProduct";
 
 
 // export const router = createBrowserRouter([
@@ -94,6 +95,10 @@ export const router = createBrowserRouter([
       {
         path: "/food-by-category/:id",
         element: <FoodByCategory />,
+      },
+      {
+        path: "/details",
+        element: <DetailsProduct />,
       },
       {
         path: "/order-process",

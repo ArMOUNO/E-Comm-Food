@@ -14,37 +14,37 @@ const PopulerProducts = () => {
     const [Products, setProducts] = useState([]);
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(false);
-
+  
 
     const handleProductShow = (data) => {
         // console.log(data)
     }
     const { cartData, setCartData } = useContext(CartContext)
+    const { setFoodDetails,}=useContext(CartContext)
 
-     
     const handleBuy = (data) => {
         try {
             setCartData((prevData) => {
-            
+
                 const existingItemIndex = prevData?.findIndex(item => item?.idMeal === data?.idMeal);
                 if (existingItemIndex !== -1) {
                     const updatedData = [...prevData];
                     updatedData[existingItemIndex].count += 1;
                     return updatedData;
-                } else {             
+                } else {
                     return [...(prevData || []), { ...data, count: 1 }];
                 }
             });
- 
+
             toast.success(`${data?.strMeal} has been added`);
         } catch (error) {
             toast.error('Something bad happened');
             console.error("Error in handleBuy:", error);
         }
     };
-    
-    
-  
+
+
+
     const handleViewAllProduct = () => {
         navigate('/all-products');
     }
@@ -58,7 +58,11 @@ const PopulerProducts = () => {
             setLoading(false);
         }
     };
-
+    const handleDetails = (data) => {
+        setFoodDetails(data)
+        navigate('/details');
+    }
+ 
     useEffect(() => {
         fetchCategories();
 
@@ -74,7 +78,7 @@ const PopulerProducts = () => {
                     {
                         loading ?
                             <>
-                            <div className="flex justify-center w-full mx-auto col-span-10">
+                                <div className="flex justify-center w-full mx-auto col-span-10">
                                     <HashLoader color="#c80d0d" />
                                 </div>
                             </> :
@@ -86,6 +90,7 @@ const PopulerProducts = () => {
                                         item={item.strMeal?.length > 10 ? `${item.strMeal.substring(0, 10)}...` : item?.strMeal}
                                         price={item?.idMeal}
                                         onBuy={() => { handleBuy(item) }}
+                                        itemViewClick={() => { handleDetails(item) }}
                                     />
                                 </div>
                             ))
@@ -93,7 +98,7 @@ const PopulerProducts = () => {
 
 
                 </div>
-           
+
             </section>
         </div>
     );
