@@ -1,38 +1,65 @@
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { CartDrawer } from "../Components/CartDrawer";
 import { Link, useNavigate } from "react-router-dom";
 import { Login } from "../Components/Login";
+
+import SearchModal from "../Components/SearchModal";
+import axios from "axios";
+
 // import Login from "../Components/Login";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-
+  const [modalOpen, setModalOpen] = useState(false);
+  const [searchItem,setSearchItem]=useState()
+  const [products,setProducts]=useState()
   const navigate = useNavigate()
   const handleNavigate = () => {
     navigate('/')
   }
-const getItem=JSON.parse(localStorage.getItem("user"));
-const HandlelogOut = () => {
-  localStorage.removeItem("user"); 
-  console.log("User has been logged out.");
+  const getItem = JSON.parse(localStorage.getItem("user"));
+  const HandlelogOut = () => {
+    localStorage.removeItem("user");
+    console.log("User has been logged out.");
 
+  };
+
+  const handleSearch = (e) => {
+    const searchItm = e.target.value;
+    setSearchItem(searchItm)
+    if(searchItm?.length>0){
+      setModalOpen(true)
+    }else
+    setModalOpen(false);
+    
+  }
+  const fetchCategories = async () => {
+    try {
+        const response = await axios.get(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchItem}`);
+        setProducts(response?.data);
+
+    } catch (error) {
+        // setError(error?.message);
+    } finally {
+        // setLoading(false);
+    }
 };
+    useEffect(() => {
+        fetchCategories();
 
+    }, [searchItem]);
   return (
-    <nav className="bg-gradient-to-b from-red-900 to-red-950 text-white shadow-md">
+    <nav className="bg-gradient-to-b from-red-900 to-red-950 text-white shadow-md relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
 
           <div onClick={handleNavigate} className="flex-shrink-0">
             <Link to="/">
-              <img src="/src/assets/Logo.png" alt="Logo" className="h-8" />
+              <img src="/src/assets/Logo.png" alt="Logo" className="md:h-8 h-5" />
             </Link>
-
-
           </div>
-
 
           <div className="hidden md:flex space-x-4 items-center">
             <Link
@@ -92,23 +119,24 @@ const HandlelogOut = () => {
             <input
               type="text"
               placeholder="Search..."
+              onChange={(e) => { handleSearch(e) }}
               className="px-3 py-2 w-[110px] md:w-auto h-7 md:h-auto rounded-md text-gray-700 placeholder-gray-bg-green-600 focus:ring-2 focus:ring-green-bg-green-600 focus:outline-none"
             />
             <CartDrawer />
             {
-              getItem?
-              <Link >
-              <div onClick={HandlelogOut} className="logout-btn p-3 text-white bg-red-600 rounded-md cursor-pointer hover:bg-red-700 transition-all">
-              Log out
-              </div>
-            </Link>:
-            <Link to="/login">
-              <div  className="button-29 p-3 text-white bg-red-600 rounded-md cursor-pointer hover:bg-red-700 transition-all">
-                Login
-              </div>
-            </Link>
+              getItem ?
+                <Link >
+                  <div onClick={HandlelogOut} className="logout-btn md:p-3 p-1 text-white bg-red-600 rounded-md  cursor-pointer hover:bg-red-700 transition-all">
+                    Log out
+                  </div>
+                </Link> :
+                <Link to="/login">
+                  <div className="button-29 md:p-3 p-1 text-white bg-red-600 rounded-md  cursor-pointer hover:bg-red-700 transition-all">
+                    Login
+                  </div>
+                </Link>
             }
-          
+
           </div>
 
           <div className="md:hidden">
@@ -176,6 +204,9 @@ const HandlelogOut = () => {
 
         </div>
       </div>
+      <SearchModal products={products} searchItem={searchItem} isOpen={modalOpen} onClose={() => setModalOpen(false)} title="Result">
+        <p>This is a reusable modal component.</p>
+      </SearchModal>
     </nav>
   );
 };
