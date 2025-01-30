@@ -34,7 +34,7 @@ const Footer = () => {
         <div>
           <h2 className="text-xl font-semibold mb-4">Get in touch</h2>
           <p className="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
-          <div className="mt-4 space-x-2 md:space-x-0">
+          <div className="mt-4 flex items-start md:items-center md:space-x-2 flex-col md:flex-row ">
             <input type="email" placeholder="Email" className="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-blue-500" />
             <button className="bg-red-500 hover:bg-red-600 text-white rounded-md px-4 py-2 my-2 ">Subscribe</button>
           </div>

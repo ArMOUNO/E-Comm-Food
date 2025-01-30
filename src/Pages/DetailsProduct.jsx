@@ -13,15 +13,15 @@ const DetailsProduct = () => {
     const { foodDetails } = useContext(CartContext);
     const foodID = foodDetails?.idMeal;
 
-    // Fetch Food Data
+  
     const fetchFoodData = async () => {
-        if (!foodID) return; // Avoid API call if foodID is not available
+        if (!foodID) return; 
         setLoading(true);
         try {
             const response = await axios.get(
                 `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${foodID}`
             );
-            setProducts(response?.data?.meals?.[0]); // Store only the first meal object
+            setProducts(response?.data?.meals?.[0]); 
         } catch (error) {
             setError(error?.message);
         } finally {
@@ -29,9 +29,9 @@ const DetailsProduct = () => {
         }
     };
 
-    // Fetch Products from the Same Category
+  
     const fetchSameCategory = async (category) => {
-        if (!category) return; // Avoid API call if category is missing
+        if (!category) return; 
         setLoading(true);
         try {
             const response = await axios.get(
@@ -45,19 +45,17 @@ const DetailsProduct = () => {
         }
     };
 
-    // Fetch Product Data
+ 
     useEffect(() => {
         fetchFoodData();
     }, [foodID]);
 
-    // Fetch Similar Products Once Category is Available
     useEffect(() => {
         if (products?.strCategory) {
             fetchSameCategory(products.strCategory);
         }
     }, [products?.strCategory]);
 
-    // Mocked Customer Reviews & Related Products
     const productReview = {
         reviews: [
             {
@@ -102,7 +100,7 @@ const DetailsProduct = () => {
                                     {products.strMeal}
                                 </h1>
                                 <p className="text-2xl text-gray-700 font-semibold mb-4">
-                                    Meal ID: {products.idMeal}
+                                    Price: ${products.idMeal}
                                 </p>
                                 <p className="text-gray-600 mb-6">
                                     {products.strInstructions}

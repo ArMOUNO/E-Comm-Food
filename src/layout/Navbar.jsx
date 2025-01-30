@@ -13,8 +13,8 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
-  const [searchItem,setSearchItem]=useState()
-  const [products,setProducts]=useState()
+  const [searchItem, setSearchItem] = useState()
+  const [products, setProducts] = useState()
   const navigate = useNavigate()
   const handleNavigate = () => {
     navigate('/')
@@ -29,27 +29,27 @@ const Navbar = () => {
   const handleSearch = (e) => {
     const searchItm = e.target.value;
     setSearchItem(searchItm)
-    if(searchItm?.length>0){
+    if (searchItm?.length > 0) {
       setModalOpen(true)
-    }else
-    setModalOpen(false);
-    
+    } else
+      setModalOpen(false);
+
   }
   const fetchCategories = async () => {
     try {
-        const response = await axios.get(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchItem}`);
-        setProducts(response?.data);
+      const response = await axios.get(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchItem}`);
+      setProducts(response?.data);
 
     } catch (error) {
-        // setError(error?.message);
+      // setError(error?.message);
     } finally {
-        // setLoading(false);
+      // setLoading(false);
     }
-};
-    useEffect(() => {
-        fetchCategories();
+  };
+  useEffect(() => {
+    fetchCategories();
 
-    }, [searchItem]);
+  }, [searchItem]);
   return (
     <nav className="bg-gradient-to-b from-red-900 to-red-950 text-white shadow-md relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -81,9 +81,12 @@ const Navbar = () => {
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                 className=" px-3 py-1 rounded-full  hover:bg-gradient-to-b hover:from-gray-800 hover:to-red-800 hover:shadow-lg transition-all duration-300 ease-in-out flex items-center justify-center focus:outline-none"
               >
-                Services
+                <Link to="/menu">
+                  Menu
+                </Link>
+
               </button>
-              {isDropdownOpen && (
+              {/* {isDropdownOpen && (
                 <div className="absolute right-0 mt-2 w-48 bg-white text-gray-700 rounded-md shadow-lg z-20">
                   <Link
                     to="/web-design"
@@ -104,7 +107,7 @@ const Navbar = () => {
                     Marketing
                   </Link>
                 </div>
-              )}
+              )} */}
             </div>
 
             <Link

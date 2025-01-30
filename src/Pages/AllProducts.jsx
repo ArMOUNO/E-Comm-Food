@@ -62,7 +62,10 @@ const AllProducts = () => {
         <div>
             <section>
                 <div className="flex justify-between">
-                    <p className="text-2xl font-bold">All Products</p>
+                <p className="text-white bounce-top text-2xl my-2 w-full relative font-serif text-center bg-gradient-to-r from-red-500 to-red-300 px-6 py-4 rounded-lg shadow-lg uppercase tracking-wider">
+                            Choose your favorite Item
+                            <img className='w-11 absolute top-1 right-1' src="/src/assets/leaf.png" alt="" />
+                        </p>
                 </div>
                 <div className="my-5 grid lg:grid-cols-7 gap-4  md:grid-cols-5 grid-cols-3 ">
                     {
