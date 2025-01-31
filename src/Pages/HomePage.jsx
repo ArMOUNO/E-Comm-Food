@@ -1,17 +1,45 @@
-
 import { FaArrowRight } from "react-icons/fa6";
 import Categories from "../Components/Categories";
 import PopulerProducts from "../Components/PopulerProducts";
 import TodayOffer from "../Components/TodayOffer";
 
 const HomePage = () => {
-    return (
-        <>
-            <div className="grid lg:grid-cols-8 grid-cols-2 gap-2  md:my-4 ">
-                <div className="flex items-center mt-3 md:mt-0 md:rounded-md py-20 relative lg:col-span-5 col-span-2 row-span-2 bg-cover bg-center bg-no-repeat h-[500px] md:h-auto"
+  return (
+    <>
+      {/* <div className="grid lg:grid-cols-8 grid-cols-2 gap-2  md:my-4 "> */}
+      <div className="">
+        <section className="flex  md:flex-row flex-col-reverse justify-around lg:mx-[10%] items-center my-4">
+          <div>
+            <div className="leading-tight text-2xl md:text-7xl lg:text-[8vh] w-full md:w-[65%]  text-black font-bold ">
+              Claim Best Offer on Fast{" "}
+              <span className="text-red-800 font-serif">Food</span> &{" "}
+              <span className="text-red-800 font-serif">Restaurants</span>{" "}
+            </div>
+            <p className="md:text-2xl my-2">
+              Our job is to filling your tummy with delicious food and with fast
+              and free delivery
+            </p>
+            <div className="flex items-end space-x-7">
+              <button className="bg-red-600 px-4 py-2 rounded-full text-white text-lg">
+                Get Started
+              </button>
+              <img className="w-16" src="/src/assets/Hungry Food Drink Sticker.gif" alt="" />
+            </div>
+          </div>
+
+          <div>
+            {" "}
+            <img
+              className=" shadow-red-600 rounded-full bg-opacity-5 w-[2400px]"
+              src="/src/assets/newBanner.png"
+              alt=""
+            />
+          </div>
+        </section>
+        {/* <div className="flex items-center mt-3 md:mt-0 md:rounded-md py-20 relative lg:col-span-5 col-span-2 row-span-2 bg-cover bg-center bg-no-repeat h-[500px] md:h-auto"
                     style={{ backgroundImage: "url('/src/assets/Bannar Big.png')" }}
                 >
-                    {/* <img src="/src/assets/Bannar Big.png" className="cover" alt="" /> */}
+    
                     <div className="mx-3  space-y-6 md:p-4 p-1 ">
                         <p className="text-[5vh] leading-10 w-full md:w-[65%] text-xl text-white font-bold ">Fresh & Healthy
                             Organic Food
@@ -25,8 +53,8 @@ const HomePage = () => {
                         </button>
                     </div>
 
-                </div>
-                <div className="rounded-md bg-cover bg-center bg-no-repeat h-full md:h-auto lg:col-span-3" style={{ backgroundImage: "url('/src/assets/Bannar2.png')" }}>
+                </div> */}
+        {/* <div className="rounded-md bg-cover bg-center bg-no-repeat h-full md:h-auto lg:col-span-3" style={{ backgroundImage: "url('/src/assets/Bannar2.png')" }}>
 
                     <div className="lg:py-20 mx-4 h-full">
                         <p className="md:text-[2vh] text-sm">Summer Sale</p>
@@ -39,43 +67,69 @@ const HomePage = () => {
                 </div>
                 <div className="rounded-md lg:col-span-3 lg:col-start-6">
                     <img className="w-full" src="/src/assets/Banner3.png" alt="" />
-                </div>
-            </div>
-            <div className="grid lg:grid-cols-4 grid-cols-2 gap-2  md:my-4 bg-white shadow-md px-3 py-7">
-                <div className="flex md:items-center items-start space-x-2">
-                    <img src="/src/assets/delivery-truck 1.png" alt="" />
-                    <div>
-                        <p className="text-lg font-bold">Free Shipping</p>
-                        <p className="text-gray-500">Free shipping on all your order</p>
-                    </div>
-                </div>
-                <div className="flex md:items-center items-start space-x-2">
+                </div> */}
+      </div>
+      <div className="bg-red-100 my-2 py-1 rounded-md">
+        <p className="text-lg text-center mt-4 font-mono text-red-700">
+          WHAT WE SERVE
+        </p>
+        <p className="text-[3vh] text-center ">
+          Your Favorite Food Delivery Partner
+        </p>
+      </div>
+      <div className="flex flex-col md:flex-row justify-around  md:my-4 bg-white shadow-md px-3 py-7">
+        <div className="flex md:items-center items-start space-x-2">
+          <img
+            className="w-[100px] md:w-full"
+            src="/src/assets/delivery-truck 1 .png"
+            alt=""
+          />
+          <div>
+            <p className="md:text-2xl text-lg font-bold">Free Shipping</p>
+            <p className="md:text-2xl text-gray-500">
+              Free shipping on all your order
+            </p>
+          </div>
+        </div>
+        {/* <div className="flex md:items-center items-start space-x-2">
                     <img src="/src/assets/headphones 1.png" alt="" />
                     <div>
-                        <p className="text-lg font-bold">Customer Support 24/7</p>
-                        <p className="text-gray-500">Instant access to Support</p>
+                        <p className="md:text-2xl text-lg font-bold">Customer Support 24/7</p>
+                        <p className="md:text-2xl text-gray-500">Instant access to Support</p>
                     </div>
-                </div>
-                <div className="flex md:items-center items-start space-x-2">
-                    <img src="/src/assets/cart.png" alt="" />
-                    <div>
-                        <p className="text-lg font-bold">100% Secure Payment</p>
-                        <p className="text-gray-500">We ensure your money is save</p>
-                    </div>
-                </div>
-                <div className="flex md:items-center items-start space-x-2">
-                    <img src="/src/assets/cart.png" alt="" />
-                    <div>
-                        <p className="text-lg font-bold">Money-Back Guarantee</p>
-                        <p className="text-gray-500">30 Days Money-Back Guarantee</p>
-                    </div>
-                </div>
-            </div>
-            <Categories/>
-            <PopulerProducts/>
-            <TodayOffer/>
-        </>
-    );
+                </div> */}
+        <div className="flex md:items-center items-start space-x-2">
+          <img
+            className="w-[100px] md:w-full"
+            src="/src/assets/Order food-pana 1.png"
+            alt=""
+          />
+          <div>
+            <p className="md:text-2xl text-lg font-bold">Easy To Order</p>
+            <p className="md:text-2xl text-gray-500">
+              You only need a few steps in ordering food
+            </p>
+          </div>
+        </div>
+        <div className="flex md:items-center items-start space-x-2">
+          <img
+            className="w-[100px] md:w-full"
+            src="/src/assets/Waiters-rafiki 1.png"
+            alt=""
+          />
+          <div>
+            <p className="md:text-2xl text-lg font-bold">Best Quality</p>
+            <p className="md:text-2xl text-gray-500">
+              Not only fast for us quality is also number one
+            </p>
+          </div>
+        </div>
+      </div>
+      <Categories />
+      <PopulerProducts />
+      <TodayOffer />
+    </>
+  );
 };
 
 export default HomePage;

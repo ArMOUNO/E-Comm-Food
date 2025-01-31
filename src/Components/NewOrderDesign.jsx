@@ -12,7 +12,7 @@ const NewOrderDesign = ({ onBuy, item, details, img, price,itemViewClick }) => {
                         <p className="text-xs md:text-lg">{item}</p>
                         <p className="text-xs md:text-xs">{details}</p>
                     </div>
-                    <p className="text-sm">Price ${price}</p>
+                    <p className="text-sm">Price ${price.toString().slice(-2)}</p>
                 </div>
                 <div className="flex justify-center">
                     <button onClick={onBuy} className="bg-red-500 hover:scale-105 rounded-md absolute top-[184px] text-white p-1 px-3 text-xs  md:text-sm">Add to Cart</button>
