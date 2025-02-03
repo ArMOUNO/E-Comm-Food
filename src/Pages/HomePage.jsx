@@ -70,7 +70,7 @@ const HomePage = () => {
                 </div> */}
       </div>
       <div className="bg-red-100 my-2 py-1 rounded-md">
-        <p className="text-lg text-center mt-4 font-mono text-red-700">
+        <p className="text-2xl text-center mt-4 font-sans text-red-700">
           WHAT WE SERVE
         </p>
         <p className="text-[3vh] text-center ">

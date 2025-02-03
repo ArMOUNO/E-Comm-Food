@@ -36,7 +36,7 @@ const OrderProcess3 = () => {
                         paymentVals={false}
                     />
                 </div>
-                vaaaaa
+             
 
                 <button onClick={handleNext} className='button-52 my-4 w-fit px-5 text-white'>Next</button>
             </div>

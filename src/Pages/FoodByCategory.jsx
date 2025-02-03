@@ -64,7 +64,7 @@ const FoodByCategory = () => {
             {
                 loading ?
                     <>
-                        <div className="flex justify-center w-full mx-auto col-span-7">
+                        <div className="flex justify-center w-full mx-auto col-span-7 my-5">
                             <HashLoader color="#c80d0d" />
                         </div>
                     </> :
