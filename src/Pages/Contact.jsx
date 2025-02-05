@@ -26,7 +26,7 @@ const Contact = () => {
         </p>
         <div className="flex items-center my-5 rounded-md justify-center">
           <div className=" flex items-center justify-center ">
-            <div className="bg-white  p-8 rounded-lg  w-[700px] max-w-md">
+            <div className="bg-white p-8 rounded-lg  w-[700px] max-w-md  bg-[url('/src/assets/plate.png')] ">
               <h2 className="text-2xl font-semibold text-red-600 text-center mb-6">
                 Contact Us
               </h2>

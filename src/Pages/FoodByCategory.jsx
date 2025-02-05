@@ -74,7 +74,7 @@ const FoodByCategory = () => {
                             <img className='w-11 absolute top-1 right-1' src="/src/assets/leaf.png" alt="" />
                         </p>
 
-                        <div className='my-9 grid lg:grid-cols-6 md:grid-cols-4 grid-cols-3'>
+                        <div className='my-9 grid-container'>
                             {
                                 Products?.meals?.map((item, index) => (
                                     <div className="mt-14 " key={index}>

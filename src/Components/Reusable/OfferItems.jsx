@@ -5,8 +5,8 @@ const OfferItems = ({ oldPrice, NewPrice, title, img, handleCart }) => {
 
     return (
         <div>
-            <div className='relative bg-white lg:pb-3 shadow-2xl my-4 w-[120px] h-[200px] md:w-[170px] md:h-[230px] lg:w-[200px] lg:h-[270px] flex flex-col justify-end items-center rounded-lg md:rounded-2xl  lg:rounded-3xl'>
-                <img className='lg:w-[90%] h-[55%] w-[90%] rounded-lg overflow-hidden mt-4' src={img} alt="" />
+            <div className='relative bg-white lg:pb-3 shadow-2xl my-4 w-[120px] h-[170px] md:w-[150px] md:h-[230px] lg:w-[200px] lg:h-[270px] flex flex-col justify-end items-center rounded-xl md:rounded-2xl  lg:rounded-3xl'>
+                <img className='lg:w-[90%] h-[50%] w-[90%] rounded-lg overflow-hidden mt-4' src={img} alt="" />
                 <p
                     className='text-sm md:text-lg text-center font-bold text-gray-700 truncate'
                     style={{ maxWidth: '13ch' }}

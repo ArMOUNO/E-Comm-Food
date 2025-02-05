@@ -74,7 +74,7 @@ const PopulerProducts = () => {
                     <p className="text-2xl font-bold">Popular Products</p>
                     <p onClick={handleViewAllProduct} className="button-87 p-2 px-4 rounded-md text-sm flex items-center cursor-pointer ">View All </p>
                 </div>
-                <div className="my-11 grid lg:grid-cols-7 xl:grid-cols-8 md:gap-y-20 gap-y-10 gap-4  md:grid-cols-5 grid-cols-3 ">
+                <div className="my-11 grid-container gap-3">
                     {
                         loading ?
                             <>

@@ -81,7 +81,7 @@ const TodayOffer = () => {
                 <PiFlagPennantFill className="absolute text-red-600 top-[-80px] left-[-6rem]" size={140} />
             </div>
             <img className="absolute md:w-[60%] lg:w-[50%] xl:w-[30%] md:top-[-100px] md:right-[-180px] lg:block hidden  lg:top-[-140px] lg:right-0 opacity-100" src="/src/assets/offerSec.png" alt="" />
-            <div className="grid lg:grid-cols-5 xl:grid-cols-7 md:grid-cols-4 grid-cols-3 gap-3 ">
+            <div className="grid-container ">
                 {
                     Products?.meals?.map((item) => (
                         <OfferItems
