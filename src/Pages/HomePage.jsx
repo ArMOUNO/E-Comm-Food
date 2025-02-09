@@ -2,6 +2,7 @@ import { FaArrowRight } from "react-icons/fa6";
 import Categories from "../Components/Categories";
 import PopulerProducts from "../Components/PopulerProducts";
 import TodayOffer from "../Components/TodayOffer";
+import CuponOffer from "../Components/CuponOffer";
 
 const HomePage = () => {
   return (
@@ -23,7 +24,11 @@ const HomePage = () => {
               <button className="bg-red-600 px-4 py-2 rounded-full text-white text-lg">
                 Get Started
               </button>
-              <img className="w-16" src="/src/assets/Hungry Food Drink Sticker.gif" alt="" />
+              <img
+                className="w-16"
+                src="/src/assets/Hungry Food Drink Sticker.gif"
+                alt=""
+              />
             </div>
           </div>
 
@@ -128,6 +133,7 @@ const HomePage = () => {
       <Categories />
       <PopulerProducts />
       <TodayOffer />
+      <CuponOffer />
     </>
   );
 };
