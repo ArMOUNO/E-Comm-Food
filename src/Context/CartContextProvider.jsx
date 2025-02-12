@@ -22,15 +22,6 @@ const CartContextProvider = ({ children }) => {
         }
     }, [category,cartData,foodDetails]);
  
-
-    // useEffect(() => {
-    //     try {
-    //         localStorage.setItem("category", JSON.stringify(category));
-    //     } catch (error) {
-    //         console.error("Failed to save category to localStorage", error);
-    //     }
-    // }, [category,foodDetails]);
-
     const value = useMemo(() => ({
         cartData,
         setCartData,

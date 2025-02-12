@@ -2,7 +2,7 @@ import React from "react";
 
 const CuponOffer = () => {
   return (
-    <div className="flex  justify-between  mx-5 my-10 shadow-xl  my-14 rounded-md overflow-hidden">
+    <div className="flex  justify-between mx-0 lg:mx-5 my-10 shadow-xl  rounded-md overflow-hidden">
       <div className="grid lg:grid-cols-12 shadow-lg p-2  grid-cols-2 gap-3 rounded-md mx-auto">
   
         <div className=" lg:col-span-3  lg:row-span-2 overflow-hidden">

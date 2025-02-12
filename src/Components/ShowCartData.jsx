@@ -19,7 +19,7 @@ const ShowCartData = ({ price, title, img, handleRemoveOrder, handleDoOrder, han
                 <div className="flex flex-col justify-center">
                     <h2 className="text-lg font-semibold text-gray-800">{title}</h2>
                     <div className="flex items-center justify-between">
-                        <p className="text-sm font-bold text-red-600 mt-2">Price: ${price}</p>
+                        <p className="text-sm font-bold text-red-600 mt-2">Price: ${price.toString().slice(-2)}</p>
                         <div className="flex items-center mt-1  text-xs text-gray-500 font-bold">
                             <span className="mx-2">Quantity</span>
                             <HiMinusSm
