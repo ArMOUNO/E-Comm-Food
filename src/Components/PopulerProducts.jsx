@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from "react";
 
 import axios from "axios";
 import { FaArrowRight } from "react-icons/fa6";
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { CartContext } from "../Context/CartContextProvider";
 import { toast } from "keep-react";
 import NewOrderDesign from "./NewOrderDesign";
@@ -14,7 +14,13 @@ const PopulerProducts = () => {
     const [Products, setProducts] = useState([]);
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(false);
-  
+    const location = useLocation();
+
+    useEffect(() => {
+        if (location.state?.scrollToPopular) {
+            document.getElementById("popular-products")?.scrollIntoView({ behavior: "smooth" });
+        }
+    }, [location]);
 
     const handleProductShow = (data) => {
         // console.log(data)
@@ -69,7 +75,7 @@ const PopulerProducts = () => {
     }, []);
     return (
         <div>
-            <section>
+            <section id="popular-products">
                 <div className="flex justify-between bg-gradient-to-r from-red-100 to-red-50 bg-red-50 p-2 rounded-md">
                     <p className="text-2xl font-bold">Popular Products</p>
                     <p onClick={handleViewAllProduct} className="button-87 p-2 px-4 rounded-md text-sm flex items-center cursor-pointer ">View All </p>
@@ -83,7 +89,7 @@ const PopulerProducts = () => {
                                 </div>
                             </> :
                             Products?.meals?.slice(0, 10)?.map((item, index) => (
-                                <div className="mt-3" onClick={() => { handleProductShow(item) }} key={index}>
+                                <div className="mt-10" onClick={() => { handleProductShow(item) }} key={index}>
 
                                     <NewOrderDesign
                                         img={item?.strMealThumb}

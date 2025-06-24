@@ -9,7 +9,7 @@ const HomePage = () => {
     <>
       {/* <div className="grid lg:grid-cols-8 grid-cols-2 gap-2  md:my-4 "> */}
       <div className="">
-        <section className="flex  md:flex-row flex-col-reverse justify-around lg:mx-[10%] items-center my-4">
+        <section className="flex  md:flex-row flex-col-reverse justify-around lg:mx-[2%] items-center my-4">
           <div>
             <div className="leading-tight text-2xl md:text-7xl lg:text-[8vh] w-full md:w-[65%]  text-black font-bold ">
               Claim Best Offer on Fast{" "}
@@ -132,8 +132,8 @@ const HomePage = () => {
       </div>
       <Categories />
       <PopulerProducts />
-      <TodayOffer />
       <CuponOffer />
+      <TodayOffer />
     </>
   );
 };

@@ -3,25 +3,26 @@ import { CartContext } from '../Context/CartContextProvider';
 import axios from 'axios';
 import HashLoader from "react-spinners/HashLoader"; // Ensure this is installed
 import NewOrderDesign from "../Components/NewOrderDesign"
+import { toast } from 'keep-react';
 
 const DetailsProduct = () => {
     const [products, setProducts] = useState(null);
     const [sameProducts, setSameProducts] = useState([]);
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(false);
-
+    const { setCartData } = useContext(CartContext)
     const { foodDetails } = useContext(CartContext);
     const foodID = foodDetails?.idMeal;
 
-  
+
     const fetchFoodData = async () => {
-        if (!foodID) return; 
+        if (!foodID) return;
         setLoading(true);
         try {
             const response = await axios.get(
                 `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${foodID}`
             );
-            setProducts(response?.data?.meals?.[0]); 
+            setProducts(response?.data?.meals?.[0]);
         } catch (error) {
             setError(error?.message);
         } finally {
@@ -29,9 +30,9 @@ const DetailsProduct = () => {
         }
     };
 
-  
+
     const fetchSameCategory = async (category) => {
-        if (!category) return; 
+        if (!category) return;
         setLoading(true);
         try {
             const response = await axios.get(
@@ -45,7 +46,7 @@ const DetailsProduct = () => {
         }
     };
 
- 
+
     useEffect(() => {
         fetchFoodData();
     }, [foodID]);
@@ -72,6 +73,27 @@ const DetailsProduct = () => {
             },
         ],
     };
+    const handleBuy = () => {
+
+        try {
+            setCartData((prevData) => {
+
+                const existingItemIndex = prevData?.findIndex(item => item?.idMeal === products?.idMeal);
+                if (existingItemIndex !== -1) {
+                    const updatedData = [...prevData];
+                    updatedData[existingItemIndex].count += 1;
+                    return updatedData;
+                } else {
+                    return [...(prevData || []), { ...products, count: 1 }];
+                }
+            });
+
+            toast.success(`${products?.strMeal} has been added`);
+        } catch (error) {
+            toast.error('Something bad happened');
+            console.error("Error in handleBuy:", error);
+        }
+    };
 
     return (
         <>
@@ -84,8 +106,8 @@ const DetailsProduct = () => {
             ) : products ? (
                 <div className="min-h-screen bg-white py-8">
                     <div className="container mx-auto bg-white rounded-2xl shadow-xl overflow-hidden max-w-5xl">
-                        <div className="flex flex-col md:flex-row">
-                            {/* Product Image */}
+                        <div className="flex bg-yellow-50 shadow-2xl flex-col md:flex-row">
+
                             <div className="md:w-1/2">
                                 <img
                                     src={products.strMealThumb}
@@ -94,24 +116,25 @@ const DetailsProduct = () => {
                                 />
                             </div>
 
-                            {/* Product Details */}
+
                             <div className="md:w-1/2 p-6">
                                 <h1 className="text-4xl font-bold text-red-700 mb-4">
                                     {products.strMeal}
                                 </h1>
                                 <p className="text-2xl text-gray-700 font-semibold mb-4">
-                                    Price: ${products.idMeal}
+
+                                    Price: ${products.idMeal.toString().slice(-2)}
                                 </p>
                                 <p className="text-gray-600 mb-6">
                                     {products.strInstructions}
                                 </p>
-                                <button className="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-xl transition-all duration-300 shadow-md">
+                                <button onClick={handleBuy} className="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-xl transition-all duration-300 shadow-md">
                                     Add to Cart
                                 </button>
                             </div>
                         </div>
 
-                        {/* Ingredients List */}
+
                         <div className="bg-red-100 p-6">
                             <h2 className="text-2xl font-semibold text-red-600 mb-4">
                                 Product Highlights
@@ -125,7 +148,6 @@ const DetailsProduct = () => {
                             </ul>
                         </div>
 
-                        {/* Customer Reviews */}
                         <div className="p-6">
                             <h2 className="text-2xl font-semibold text-red-600 mb-4">
                                 Customer Reviews
@@ -153,7 +175,7 @@ const DetailsProduct = () => {
                         </div>
                     </div>
 
-                    {/* Related Products Section */}
+
                     <div className="bg-white">
                         <h2 className="text-2xl font-bold font-serif my-5 text-red-600 bg-red-50 p-4 rounded-md">
                             You Might Also Like

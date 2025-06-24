@@ -81,15 +81,15 @@ const TodayOffer = () => {
                 <PiFlagPennantFill className="absolute text-red-600 top-[-80px] left-[-6rem]" size={140} />
             </div>
             <img className="absolute md:w-[60%] lg:w-[50%] xl:w-[30%] md:top-[-100px] md:right-[-180px] lg:block hidden  lg:top-[-140px] lg:right-0 opacity-100" src="/src/assets/offerSec.png" alt="" />
-            <div className="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-6  2xl:grid-cols-9 ">
+            <div className="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-7   ">
                 {
                     Products?.meals?.map((item) => (
                         <OfferItems
                             key={item?.idMeal}
                             title={item?.strMeal}
                             img={item?.strMealThumb}
-                            oldPrice={item?.idMeal}
-                            NewPrice={item?.idMeal ? `${Math.round(item.idMeal * 0.3)}` : 'No Price Available'}
+                            oldPrice={item?.idMeal.toString().slice(-2)}
+                            NewPrice={item?.idMeal ? `${Math.round(item.idMeal.toString().slice(-2) * 0.3)}` : 'No Price Available'}
                             handleCart={() => { HandleAddCart(item) }}
 
                         />
