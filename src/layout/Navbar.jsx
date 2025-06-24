@@ -57,7 +57,7 @@ const Navbar = () => {
 
           <div onClick={handleNavigate} className="flex-shrink-0">
             <Link to="/">
-              <img src="/src/assets/Logo.png" alt="Logo" className="md:h-8 h-5" />
+              <img src="/assets/Logo.png" alt="Logo" className="md:h-8 h-5" />
             </Link>
           </div>
 

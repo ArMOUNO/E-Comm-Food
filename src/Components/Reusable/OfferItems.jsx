@@ -21,7 +21,7 @@ const OfferItems = ({ oldPrice, NewPrice, title, img, handleCart }) => {
                 <img
                     onClick={handleCart}
                     className="offer-cart md:w-12 w-9 hover:scale-105 cursor-pointer absolute top-0 right-0"
-                    src="/src/assets/OfferCartRed.png"
+                    src="/assets/OfferCartRed.png"
                     alt="Offer Cart"
                 />
 

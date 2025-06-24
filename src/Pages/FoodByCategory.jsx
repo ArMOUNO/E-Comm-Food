@@ -71,7 +71,7 @@ const FoodByCategory = () => {
                     <>
                         <p className="text-white bounce-top text-2xl my-2 relative font-serif text-center bg-gradient-to-r from-red-500 to-red-300 px-6 py-4 rounded-lg shadow-lg uppercase tracking-wider">
                             {`  Our Delicious ${ItemCategory} Item`}
-                            <img className='w-11 absolute top-1 right-1' src="/src/assets/leaf.png" alt="" />
+                            <img className='w-11 absolute top-1 right-1' src="/assets/leaf.png" alt="" />
                         </p>
 
                         <div className='my-9 grid-container'>

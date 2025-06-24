@@ -25,7 +25,7 @@ const AboutPage = () => {
                 <div className="grid lg:grid-cols-2 my-3 gap-6">
                     {/* Left Side Content */}
                     <div className="md:w-[70%] flex flex-col">
-                        <img className="w-[200px] h-[130px]" src="/src/assets/AboutTop.png" alt="" />
+                        <img className="w-[200px] h-[130px]" src="/assets/AboutTop.png" alt="" />
                         <div className="flex items-center my-2 rounded-full bg-red-100 p-1 px-3 w-fit">
                             <IoMdHeart className="text-2xl text-green-600 bg-red-700 p-1 rounded-full mx-1" />
                             <span>People Trust Us</span>
@@ -34,7 +34,7 @@ const AboutPage = () => {
                             We're <span className="text-red-700">Serious</span> For <span className="text-red-700">Food</span> & Delivery.
                         </h1>
                         <p className="flex justify-end mt-1">
-                            <img src="/src/assets/Decore.png" alt="" />
+                            <img src="/assets/Decore.png" alt="" />
                         </p>
                         <p className="text-2xl my-2 font-serif text-gray-600">
                             Best cooks and best delivery guys all at your service. Hot tasty food will reach you in 60 minutes.
@@ -49,12 +49,12 @@ const AboutPage = () => {
                         </div>
                     </div>
                     {/* Right Side Image */}
-                    <img src="/src/assets/AboutUs.png" alt="" />
+                    <img src="/assets/AboutUs.png" alt="" />
                 </div>
             </section>
 
             {/* Why Choose Us Section */}
-            <section className="my-10 bg-gray-100 p-10 rounded-xl bg-cover bg-[url('/src/assets/contyact.png')]">
+            <section className="my-10 bg-gray-100 p-10 rounded-xl bg-cover bg-[url('/assets/contyact.png')]">
                 <h2 className="text-4xl font-serif text-center text-red-700">Why Choose Us?</h2>
                 <div className="grid md:grid-cols-3 gap-6 mt-6 text-center">
                     <div className="p-6 bg-white rounded-lg shadow-md">
@@ -79,7 +79,7 @@ const AboutPage = () => {
 
 
             {/* How It Works Section */}
-            <section className="my-10 bg-gray-100 p-10 rounded-xl bg-cover bg-[url('/src/assets/fsushi.png')]">
+            <section className="my-10 bg-gray-100 p-10 rounded-xl bg-cover bg-[url('/assets/fsushi.png')]">
                 <div className="bg-red-50 bg-opacity-50 p-7 rounded-md">
                     <h2 className="text-4xl font-serif text-center text-red-700">How It Works</h2>
                     <div className="grid md:grid-cols-3 gap-6 mt-6 text-center">

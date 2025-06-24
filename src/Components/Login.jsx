@@ -58,7 +58,7 @@ export const Login = () => {
         <section className='flex justify-center  rounded-md '>
             <div className="flex  relative md:w-[60%] w-[90%] items-center rounded-md overflow-hidden m-5 shadow-2xl shadow-red-400 bg-gray-100">
                 <div className=''>
-                    <img className='lg:h-[800px] h-[500px] w-[100%]  ' src="/src/assets/LoginPage.png" alt="" />
+                    <img className='lg:h-[800px] h-[500px] w-[100%]  ' src="/assets/LoginPage.png" alt="" />
                 </div>
                 <div className=" absolute bg-white md:bg-opacity-30 bg-opacity-80  md:left-[5%] lg:left-[50%] shadow-lg rounded-lg p-8 w-full max-w-md">
                     <h2 className="text-2xl font-bold  text-center mb-6 text-red-800">Login</h2>
@@ -120,7 +120,7 @@ export const Login = () => {
                                         <p className="text-red-600 font-semibold cursor-pointer hover:underline"> Sign Up</p>
                                     </ModalAction>
                                     <ModalContent className="max-w-[20rem] lg:max-w-[26rem]">
-                                        <img src="/src/assets/opps.png" alt="" />
+                                        <img src="/assets/opps.png" alt="" />
                                         <p className='text-red-600 text-lg font-bold text-center'>Oops <span className='text-green-600'>Sorry</span> you can't register now!</p>
                                         
                                         <ModalFooter className="justify-center">

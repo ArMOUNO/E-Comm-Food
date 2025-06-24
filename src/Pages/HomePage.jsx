@@ -3,7 +3,7 @@ import Categories from "../Components/Categories";
 import PopulerProducts from "../Components/PopulerProducts";
 import TodayOffer from "../Components/TodayOffer";
 import CuponOffer from "../Components/CuponOffer";
-import heroBanner from "/src/assets/Hungry Food Drink Sticker.gif";
+import heroBanner from "/assets/Hungry Food Drink Sticker.gif";
 const HomePage = () => {
   return (
     <>
@@ -36,13 +36,13 @@ const HomePage = () => {
             {" "}
             <img
               className=" shadow-red-600 rounded-full bg-opacity-5 w-[2400px]"
-              src="/src/assets/newBanner.png"
+              src="/assets/newBanner.png"
               alt=""
             />
           </div>
         </section>
         {/* <div className="flex items-center mt-3 md:mt-0 md:rounded-md py-20 relative lg:col-span-5 col-span-2 row-span-2 bg-cover bg-center bg-no-repeat h-[500px] md:h-auto"
-                    style={{ backgroundImage: "url('/src/assets/Bannar Big.png')" }}
+                    style={{ backgroundImage: "url('/assets/Bannar Big.png')" }}
                 >
     
                     <div className="mx-3  space-y-6 md:p-4 p-1 ">
@@ -59,7 +59,7 @@ const HomePage = () => {
                     </div>
 
                 </div> */}
-        {/* <div className="rounded-md bg-cover bg-center bg-no-repeat h-full md:h-auto lg:col-span-3" style={{ backgroundImage: "url('/src/assets/Bannar2.png')" }}>
+        {/* <div className="rounded-md bg-cover bg-center bg-no-repeat h-full md:h-auto lg:col-span-3" style={{ backgroundImage: "url('/assets/Bannar2.png')" }}>
 
                     <div className="lg:py-20 mx-4 h-full">
                         <p className="md:text-[2vh] text-sm">Summer Sale</p>
@@ -71,7 +71,7 @@ const HomePage = () => {
                     </div>
                 </div>
                 <div className="rounded-md lg:col-span-3 lg:col-start-6">
-                    <img className="w-full" src="/src/assets/Banner3.png" alt="" />
+                    <img className="w-full" src="/assets/Banner3.png" alt="" />
                 </div> */}
       </div>
       <div className="bg-red-100 my-2 py-1 rounded-md">
@@ -86,7 +86,7 @@ const HomePage = () => {
         <div className="flex md:items-center items-start space-x-2">
           <img
             className="w-[100px] md:w-full"
-            src="/src/assets/delivery-truck 1 .png"
+            src="/assets/delivery-truck 1 .png"
             alt=""
           />
           <div>
@@ -97,7 +97,7 @@ const HomePage = () => {
           </div>
         </div>
         {/* <div className="flex md:items-center items-start space-x-2">
-                    <img src="/src/assets/headphones 1.png" alt="" />
+                    <img src="/assets/headphones 1.png" alt="" />
                     <div>
                         <p className="md:text-2xl text-lg font-bold">Customer Support 24/7</p>
                         <p className="md:text-2xl text-gray-500">Instant access to Support</p>
@@ -106,7 +106,7 @@ const HomePage = () => {
         <div className="flex md:items-center items-start space-x-2">
           <img
             className="w-[100px] md:w-full"
-            src="/src/assets/Order food-pana 1.png"
+            src="/assets/Order food-pana 1.png"
             alt=""
           />
           <div>
@@ -119,7 +119,7 @@ const HomePage = () => {
         <div className="flex md:items-center items-start space-x-2">
           <img
             className="w-[100px] md:w-full"
-            src="/src/assets/Waiters-rafiki 1.png"
+            src="/assets/Waiters-rafiki 1.png"
             alt=""
           />
           <div>

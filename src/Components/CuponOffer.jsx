@@ -8,7 +8,7 @@ const CuponOffer = () => {
         <div className=" lg:col-span-3  lg:row-span-2 overflow-hidden">
           <img
             className="h-full w-full object-cover overflow-hidden shadow-xl rounded-md"
-            src="/src/assets/cuponHero.png"
+            src="/assets/cuponHero.png"
             alt=""
           />
         </div>
@@ -17,7 +17,7 @@ const CuponOffer = () => {
         <div className="lg:col-span-9 col-span-8 lg:h-[300px] rounded-lg overflow-hidden">
           <img
             className="h-full object-cover w-full "
-            src="/src/assets/30.png"
+            src="/assets/30.png"
             alt=""
           />
         </div>
@@ -26,11 +26,11 @@ const CuponOffer = () => {
         <div className="col-span-9 h-[300px] w-full rounded-lg overflow-hidden">
           <img
             className="h-full w-full object-cover"
-            src="/src/assets/sushi.png"
+            src="/assets/sushi.png"
             alt=""
           />
         </div>
-        {/* <img className=" col-span-3 row-span col-start-10 rounded-2xl " src="/src/assets/cupon.png" alt="" /> */}
+        {/* <img className=" col-span-3 row-span col-start-10 rounded-2xl " src="/assets/cupon.png" alt="" /> */}
       </div>
     
     </div>

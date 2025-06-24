@@ -80,7 +80,7 @@ const TodayOffer = () => {
                 <p className="text-gray-600 font-bold text-center mt-4 mb-6 text-3xl md:text-5xl font-mono ">Today <span className="text-red-500">Special</span> Offer</p>
                 <PiFlagPennantFill className="absolute text-red-600 top-[-80px] left-[-6rem]" size={140} />
             </div>
-            <img className="absolute md:w-[60%] lg:w-[50%] xl:w-[30%] md:top-[-100px] md:right-[-180px] lg:block hidden  lg:top-[-140px] lg:right-0 opacity-100" src="/src/assets/offerSec.png" alt="" />
+            <img className="absolute md:w-[60%] lg:w-[50%] xl:w-[30%] md:top-[-100px] md:right-[-180px] lg:block hidden  lg:top-[-140px] lg:right-0 opacity-100" src="/assets/offerSec.png" alt="" />
             <div className="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-7   ">
                 {
                     Products?.meals?.map((item) => (

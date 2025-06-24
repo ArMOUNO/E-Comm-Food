@@ -18,19 +18,19 @@ const Contact = () => {
   };
 
   return (
-    <div className="shadow-lg   flex justify-center  min-h-screen bg-center backdrop-blur-sm bg-cover bg-[url('/src/assets/contyact.png')]">
+    <div className="shadow-lg   flex justify-center  min-h-screen bg-center backdrop-blur-sm bg-cover bg-[url('/assets/contyact.png')]">
     <div className="flex flex-col bg-gray-50 bg-opacity-80 shadow-xl h-fit  rounded-md w-fit my-10 justify-center p-6">
       <p className="text-4xl text-red-700 my-3 text-center font-bold">Contact Us</p>
       <div className="flex items-center my-5 rounded-md justify-center">
         <div className="flex items-center justify-center">
-          <div className="bg-white p-8 rounded-lg w-[700px] max-w-md relative shadow-lg border border-gray-300 bg-[url('/src/assets/plate.png')]">
+          <div className="bg-white p-8 rounded-lg w-[700px] max-w-md relative shadow-lg border border-gray-300 bg-[url('/assets/plate.png')]">
             {/* Floating Decoration */}
             <div className="absolute top-0 right-0 transform translate-x-6 -translate-y-6 bg-red-500 text-white px-3 py-1 rounded-lg shadow-md">
               Let's Talk! 📞
             </div>
   
             <div className="flex flex-col items-center w-full backdrop-blur-md rounded-md my-3 bg-opacity-30">
-              <img className="w-24 animate-pulse" src="/src/assets/plant 1.png" alt="plant" />
+              <img className="w-24 animate-pulse" src="/assets/plant 1.png" alt="plant" />
               <h2 className="text-2xl font-semibold text-red-600 text-center mb-6">
                 Get in Touch
               </h2>
@@ -105,7 +105,7 @@ const Contact = () => {
         {/* Contact Image */}
         <div>
           <div className="flex flex-col lg:block hidden items-center">
-            <img className="w-[700px] " src="/src/assets/contact.png" alt="contact" />
+            <img className="w-[700px] " src="/assets/contact.png" alt="contact" />
           </div>
         </div>
       </div>

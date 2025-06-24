@@ -72,8 +72,8 @@ const OrderProcess = () => {
                 <div className='flex flex-col items-center'>
                     <div className='flex items-center justify-center space-x-5 font-bold'>
                         <p className='lg:text-4xl md:text-3xl text-2xl relative text-red-500'>Complete your order process</p>
-                        <img className='absolute top-44 w-72' src="/src/assets/Decore.png" alt="" />
-                        <img className='w-44' src="/src/assets/order.png" alt="" />
+                        <img className='absolute top-44 w-72' src="/assets/Decore.png" alt="" />
+                        <img className='w-44' src="/assets/order.png" alt="" />
                     </div>
                     <BuyingStep
                         AddressVals={false}
