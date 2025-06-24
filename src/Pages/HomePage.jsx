@@ -3,7 +3,7 @@ import Categories from "../Components/Categories";
 import PopulerProducts from "../Components/PopulerProducts";
 import TodayOffer from "../Components/TodayOffer";
 import CuponOffer from "../Components/CuponOffer";
-
+import heroBanner from "/src/assets/Hungry Food Drink Sticker.gif";
 const HomePage = () => {
   return (
     <>
@@ -26,7 +26,7 @@ const HomePage = () => {
               </button>
               <img
                 className="w-16"
-                src="/src/assets/Hungry Food Drink Sticker.gif"
+                src={heroBanner}
                 alt=""
               />
             </div>

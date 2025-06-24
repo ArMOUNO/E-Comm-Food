@@ -15,10 +15,10 @@
 }
 
 ::-webkit-scrollbar-thumb {
-    background: linear-gradient(to bottom, #01560c, #03ca32); /* Gradient from top to bottom */
+    background: linear-gradient(to bottom, #630101, #ed3535); /* Gradient from top to bottom */
     border-radius: 50px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(to bottom, #03ca32, #015b0d); /* Reverse gradient when hovered */
+    background: linear-gradient(to bottom, #ed3535, #630101); /* Reverse gradient when hovered */
 }
